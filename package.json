@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/GotanKit/log4js/issues"
   },
-  "homepage": "https://github.com/GotanKit/log4js#readme"
+  "homepage": "https://github.com/GotanKit/log4js#readme",
+  "dependencies": {
+    "momentjs": "^2.0.0"
+  }
 }
