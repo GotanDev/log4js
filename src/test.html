@@ -1,19 +1,64 @@
 <html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Log4JS FULL EXAMPLE & Documentation</title>
+	</head>
 	<body>
-		Log test
+		<pre id="header" style=""></pre>
+		<h1>Log4JS full example</h1>
+		<em>Open Console for more details</em>
+
+		<pre style="margin: 20px;background-color:#FAFAFA">
+const LOG_CONFIG = {
+	debug: true, 
+	level: Log4JS.LEVELS.TRACE, 
+	file: "log4js.log",
+	prefix: "MyLogger>"
+	date_format: "HH:MM:ss"
+};
+var log = new Log4JS(LOG_CONFIG);
+log.debug(LOG4JS_HEADER);
+log.info("Info message");
+log.warn(["Grouped messages", "First message", "Second message"]);
+
+		</pre>
+		<p>Requires moment JS</p>
 	</body>
 	<script type="text/javascript">
+		const LOG4JS_HEADER = ` 
+
+ ___      _______  _______  _   ___      ___  _______ 
+|   |    |       ||       || | |   |    |   ||       |
+|   |    |   _   ||    ___|| |_|   |    |   ||  _____|
+|   |    |  | |  ||   | __ |       |    |   || |_____ 
+|   |___ |  |_|  ||   ||  ||___    | ___|   ||_____  |
+|       ||       ||   |_| |    |   ||       | _____| |
+|_______||_______||_______|    |___||_______||_______|
+
+
+		`;
+		document.getElementById("header").innerHTML = LOG4JS_HEADER;
 	</script>
-	<script type="text/javascript" src="pub-src/js/log.js"></script>
+	<script type="text/javascript" src="log4js.js"></script>
+	<script type="text/javascript" src="../node_modules/moment/min/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="../node_modules/debugout.js/debugout.js"></script>
 	<script type="text/javascript">
+
+		/**
+		 *    ========= HERE IS USEFULL EXAMPLE ===========
+		 */
 		const LOG_CONFIG = {
 			debug: true, 
 			level: Log4JS.LEVELS.TRACE, 
-			file: "/var/log/test-log-chromium.log",
-			prefix: "KP>"
+			file: "log4js.log",
+			live:true,
+			prefix: "MyLogger>", 
+			date_format: "HH:MM:ss"
 		};
-		var log = new Log4JS();
-		log.debug("Info message");
-		log.info(["Grouped messages", "First message", "Second message"]);
+		var log = new Log4JS(LOG_CONFIG);
+		log.debug(LOG4JS_HEADER);
+		log.info("Info message");
+		log.fatal(["Grouped messages", "First message", "Second message"]);
+
 	</script>
 </html>
