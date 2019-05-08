@@ -1,0 +1,19 @@
+<html>
+	<body>
+		Log test
+	</body>
+	<script type="text/javascript">
+	</script>
+	<script type="text/javascript" src="pub-src/js/log.js"></script>
+	<script type="text/javascript">
+		const LOG_CONFIG = {
+			debug: true, 
+			level: Log4JS.LEVELS.TRACE, 
+			file: "/var/log/test-log-chromium.log",
+			prefix: "KP>"
+		};
+		var log = new Log4JS();
+		log.debug("Info message");
+		log.info(["Grouped messages", "First message", "Second message"]);
+	</script>
+</html>

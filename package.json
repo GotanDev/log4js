@@ -1,0 +1,26 @@
+{
+  "name": "log4js",
+  "version": "1.0.0",
+  "description": "Complete logger for JS Browser development",
+  "main": "src/log4js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GotanKit/log4js.git"
+  },
+  "keywords": [
+    "Logger",
+    "Javascript",
+    "Browser",
+    "Log",
+    "Tools"
+  ],
+  "author": "Damien Cuvillier <damien@gotan.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GotanKit/log4js/issues"
+  },
+  "homepage": "https://github.com/GotanKit/log4js#readme"
+}
