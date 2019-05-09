@@ -9,6 +9,10 @@ Allows to manage all logs displayed in browser console.
 Inspired by Log4J java library. 
  
 
+## INSTALLATION
+
+```npm install @g0tan/log4js```
+
 ## USAGE
 
 Simply use ```log.<method>(message)``` method.
