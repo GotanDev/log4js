@@ -79,7 +79,7 @@ const LOG_CONFIG = {
 	FILE: "/var/log/test-log4js.log",
 	PREFIX: "MyLogger>"
 };
-var log = new Log4JS();
+var log = new Log4JS(LOG_CONFIG, "MyLogger");
 log.debug("Info message");
 	log.info("Grouped messages", "First message", "Second message");
 ```
