@@ -1,68 +1,10 @@
 'use strict'
-
-/** Browser log management. 
- * Allows to manage all logs displayed in browser console. 
- * Log can
- * 
- * Inspired by Log4J java library. 
- * 
- * USAGE:
- * 		Simply use log.<method>(message) method.
- * 		
- * 		@param message can be string or array of strings
- * 			If message is an array, first message will be used as title of following grouped messages
- * 
- * CONFIGURATION: You can define a configuration object with following values. 
- * 			All are optionnals. Default values are set. 
- * 
- *     		level: minimum allowed log level. all message above this level will be ignored. 
- *	 			Choose among LEVELS const values: TRACE, DEBUG, INFO, WARN, ERROR, FATAL
- *				Default : WARN
+/** LOG4JS - Browser log management. 
  *
- * 			file: Store all logs in a local storage file. 
- * 				Allows to print & download all logs
- *				Set null for disabling this feature. 
- *				default: null
- *
- * 			live: Display all messages in console.
- *				Print messages in browser console. 
- *				default: false
- *				Note that if file & live are not set, log4js is useless ;-)
- *
- * 			prefix: Prefix before all log message (usefull for log distinguishing)
- * 				default: ""
- *
- *			date_format: date format for displaying message. 
- *				see momentJs documentation
- *				if momentJS is not loaded, this parameter is useless
- * 				default: "YYMMDD-HHmmss"
- *
- * 			debug: enable Log4JS debug messages
- * 				default: false
- * 
- * DEPENDENCIES:
- * 		momentjs is not required but allows to format date 
- * 		debugout for file outputting
- * 
- * FULL EXAMPLE
- * 
- *		```
- *		var log = new Log4JS({
- *			DEBUG: true, 
- *			LEVEL: Log4JS.LEVELS.TRACE, 
- *			FILE: "log4js.log",
- *			PREFIX: "MyLogger>", 
- * 			LIVE: true
- *		});
- *		log.debug("Info message");
- * 		log.info("Grouped messages", "First message", "Second message");
- *		```
- * @since 20190508
- * @author Damien Cuvillier <damien@gotan.io>
  * @license MIT
+ * @author Damien Cuvillier <damien@gotan.io>
+ * @see https://github.com/GotanKit/log4js#readme
  */
-
-
 class Log4JS {
 	/** Create a new logger. 
 	 * @param specificConfiguration (opt) : all settings. 
@@ -109,7 +51,7 @@ class Log4JS {
 				this._outfile.realTimeLoggingOn = false; // Avoid console.log message (duplicated log4js behavior)
 				this._outfile.useTimestamps = false;// Avoid timestamp in log message (duplicated log4js behavior)
 				this._outfile.recordLogs = true;
-				this._outfile.maxLines = 2000;
+				this._outfile.maxLines = 2500;
 				this._outfile.autoTrim = true; // FIFO
 				this._outfile.tailNumLines = 100;
 				this._outfile.logFilename = this.CONFIG.FILE;
@@ -265,7 +207,7 @@ class Log4JS {
 		this._log(this.LEVELS.FATAL, message);
 	}
 
-	downloadLogFile(){
+	downloadFile(){
 		this._checkDebugout();
 		this._outfile.downloadLog();
 	}

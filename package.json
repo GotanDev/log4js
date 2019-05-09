@@ -4,7 +4,7 @@
   "description": "Complete logger for JS Browser development",
   "main": "src/log4js.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "uglifyjs --comments -o dist/log4js.min.js src/log4js.js "
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
     "debugout.js": "^0.5.0",
     "moment": "^2.24.0",
     "momentjs": "^2.0.0"
+  },
+  "devDependencies": {
+    "uglify-es": "^3.3.9"
   }
 }
