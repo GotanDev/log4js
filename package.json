@@ -1,6 +1,6 @@
 {
   "name": "@g0tan/log4js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Complete logger for JS Browser development",
   "main": "src/log4js.js",
   "scripts": {
