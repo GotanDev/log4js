@@ -88,25 +88,25 @@ class Log4JS {
 		};
 	}
 
-	/** Load configuration from LOG_CONFIG const. */
-	_loadConfig($config) {
-		if (typeof LOG_CONFIG.level != "undefined") {
-			this.CONFIG.LEVEL = LOG_CONFIG.level;
+	/** Load configuration from parameter. */
+	_loadConfig(config) {
+		if (typeof config.level != "undefined") {
+			this.CONFIG.LEVEL = config.level;
 		}
-		if (typeof LOG_CONFIG.file != "undefined") {
-			this.CONFIG.FILE = LOG_CONFIG.file;
+		if (typeof config.file != "undefined") {
+			this.CONFIG.FILE = config.file;
 		}
-		if (typeof LOG_CONFIG.prefix != "undefined") {
-			this.CONFIG.PREFIX = LOG_CONFIG.prefix;
+		if (typeof config.prefix != "undefined") {
+			this.CONFIG.PREFIX = config.prefix;
 		}
-		if (typeof LOG_CONFIG.date_format != "undefined") {
-			this.CONFIG.DATE_FORMAT = LOG_CONFIG.date_format;
+		if (typeof config.date_format != "undefined") {
+			this.CONFIG.DATE_FORMAT = config.date_format;
 		}
-		if (typeof LOG_CONFIG.debug != "undefined") {
-			this.CONFIG.DEBUG = LOG_CONFIG.debug;
+		if (typeof config.debug != "undefined") {
+			this.CONFIG.DEBUG = config.debug;
 		}
-		if (typeof LOG_CONFIG.live != "undefined") {
-			this.CONFIG.LIVE = LOG_CONFIG.live;
+		if (typeof config.live != "undefined") {
+			this.CONFIG.LIVE = config.live;
 		}
 	}
 
